@@ -45,4 +45,25 @@ console.log(getShoppingListMsg(shoppingList));
 
 /*
 Building a Launch picker
+a program that helps in managing lunch options. Practice with an array of lunches, adding and removing items from the array, and randomly selecting a lunch option.
 */
+
+// create an empty lunches array basket
+let lunches = [];
+console.log(lunches);
+
+// create a function that takes array (foods) as first argument and string (food item) as the second.
+const addLunchToEnd = (menu, lunchItem) => {
+    // Add the lunchItem to the end of the menu array
+    menu.push(lunchItem);
+
+    // log the message
+    console.log(`${lunchItem} added to the end of the lunch menu`);
+
+    return menu
+}
+
+// Test the function
+console.log(addLunchToEnd(["salad", "onions", "mushrooms"], "githeri"));
+
+
