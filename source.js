@@ -67,3 +67,14 @@ const addLunchToEnd = (menu, lunchItem) => {
 console.log(addLunchToEnd(["salad", "onions", "mushrooms"], "githeri"));
 
 
+const addLunchToStart = (menu, lunchItem) => {
+    // add the lunchItem to the start of the array
+    menu.unshift(lunchItem);
+    console.log(`${lunchItem} added to the start of the lunch menu.`);
+    return menu
+}
+
+// Test the function
+console.log(addLunchToStart(["salad", "onions", "mushrooms"], "githeri"));
+
+
