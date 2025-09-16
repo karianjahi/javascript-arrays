@@ -58,7 +58,7 @@ const addLunchToEnd = (menu, lunchItem) => {
     menu.push(lunchItem);
 
     // log the message
-    console.log(`${lunchItem} added to the end of the lunch menu`);
+    console.log(`${lunchItem} added to the end of the lunch menu.`);
 
     return menu
 }
@@ -78,6 +78,7 @@ const addLunchToStart = (menu, lunchItem) => {
 console.log(addLunchToStart(["salad", "onions", "mushrooms"], "githeri"));
 
 
+// Function to remove the last menu item
 const removeLastLunch = (menu) => {
     // Remove the last item from the menu
     if (menu.length === 0) {
@@ -90,12 +91,114 @@ const removeLastLunch = (menu) => {
 }
 
 // Test the function
-menu1 = ["Chapati", "Ugali", "Mchele", "Nduma", "Ngwaci"]
+let amenu1 = ["Chapati", "Ugali", "Mchele", "Nduma", "Ngwaci"]
+console.log(amenu1);
+console.log(removeLastLunch(amenu1));
+let amenu2 =["Samosas"];
+console.log(amenu2);
+console.log(removeLastLunch(amenu2));
+let amenu3 =[];
+console.log(amenu3);
+console.log(removeLastLunch(amenu3));
+
+// Function to remove the first menu item
+const removeFirstLunch = (menu) => {
+    // Remove the first item from the menu
+    if (menu.length === 0) {
+        console.log("No lunches to remove.");
+        return menu
+    }
+    const firstItem = menu.shift();
+    console.log(`${firstItem} removed from the start of the lunch menu.`);
+    return menu
+}
+
+// Test the function
+console.log("")
+console.log("")
+console.log("")
+console.log("")
+let menu1 = ["Chapati", "Ugali", "Mchele", "Nduma", "Ngwaci"]
 console.log(menu1);
-console.log(removeLastLunch(menu1));
-menu2 =["Samosas"];
+console.log(removeFirstLunch(menu1));
+let menu2 =["Samosas"];
 console.log(menu2);
-console.log(removeLastLunch(menu2));
-menu3 =[];
+console.log(removeFirstLunch(menu2));
+let menu3 =[];
 console.log(menu3);
-console.log(removeLastLunch(menu3));
+console.log(removeFirstLunch(menu3));
+
+
+// A function that randomly selects an item from an array
+const getRandomLunch = (menu) => {
+    // select a random element from the array
+    if (menu.length === 0) {
+        console.log("No lunches available.");
+        return menu
+    }
+
+    // determine the length of the menu array
+    let menuLength = menu.length;
+
+    // get a random number between 0 and menuLength-1 to act as the random index to select a menu item. See how we scale Math.random from 0-1 to 0 - array length and floor the result to ensure we never get the upper index of array-length which could throw an error since that position doesn't exist in our menu array.
+    let randomIndex = Math.floor(Math.random() * menuLength);
+    // console.log(`The menu has ${menuLength} items!. Random number selected: ${randomIndex}`);
+    let menuItemRandomlySelected = menu[randomIndex];
+    console.log(`Randomly selected lunch: ${menuItemRandomlySelected}`);
+
+    return menu
+
+}
+
+// Test the function
+console.log("");
+console.log("");
+console.log("");
+console.log("");
+console.log("");
+console.log("");
+console.log("");
+console.log("");
+console.log("");
+console.log("");
+console.log(getRandomLunch(menu1));
+
+
+// A function that logs the items it contains
+
+const showLunchMenu = (menu) => {
+    if (menu.length !== 0) {
+        myMenu = []
+        let i = 0;
+        while (i < menu.length) {
+            if(i === 0) {
+                myMenu[i] = `${menu[i]}`
+            } else {
+                myMenu[i] = ` ${menu[i]}`
+                
+            }
+            i++;
+        }
+        console.log(`Menu items: ${myMenu}`);
+    } else {
+        console.log("The menu is empty.");
+    }
+    return menu
+
+}
+
+// Test the function
+console.log("");
+console.log("");
+console.log("");
+console.log("");
+console.log("");
+console.log("");
+console.log("");
+console.log("");
+let myMenu = ["Tangas","Caisi", "Kosams"]
+console.log(showLunchMenu(myMenu));
+let myMenu2 = []
+console.log(showLunchMenu(myMenu2));
+
+console.log(showLunchMenu(["Greens", "Corns", "Beans"]));
