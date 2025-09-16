@@ -78,3 +78,24 @@ const addLunchToStart = (menu, lunchItem) => {
 console.log(addLunchToStart(["salad", "onions", "mushrooms"], "githeri"));
 
 
+const removeLastLunch = (menu) => {
+    // Remove the last item from the menu
+    if (menu.length === 0) {
+        console.log("No lunches to remove.");
+        return menu
+    }
+    const lastItem = menu.pop();
+    console.log(`${lastItem} removed from the end of the lunch menu.`);
+    return menu
+}
+
+// Test the function
+menu1 = ["Chapati", "Ugali", "Mchele", "Nduma", "Ngwaci"]
+console.log(menu1);
+console.log(removeLastLunch(menu1));
+menu2 =["Samosas"];
+console.log(menu2);
+console.log(removeLastLunch(menu2));
+menu3 =[];
+console.log(menu3);
+console.log(removeLastLunch(menu3));
