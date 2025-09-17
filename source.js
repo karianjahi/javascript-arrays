@@ -202,3 +202,21 @@ let myMenu2 = []
 console.log(showLunchMenu(myMenu2));
 
 console.log(showLunchMenu(["Greens", "Corns", "Beans"]));
+
+
+/*
+Build a Golf Score Translator
+In the game of Golf, each hole has a par, meaning the average number of strokes a golfer is expected to make in order to sink the ball in the hole to complete the play. Depending on how far above or below par your strokes are, there is a different nickname. We want to build a function that converts the par and strokes to their nickname.
+*/
+const names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
+const golfScore = (par, strokes) => {
+    if (strokes === 1) return names[0]
+    if (strokes <= par-2) return names[1]
+    if (strokes <= par-1) return names[2]
+    if (strokes === par) return names[3]
+    if (strokes === par+1) return names[4]
+    if (strokes === par+2) return names[5]
+    if (strokes >= par+3) return names[6] 
+}
+
+console.log(goldScore(2, 3));
