@@ -219,4 +219,16 @@ const golfScore = (par, strokes) => {
     if (strokes >= par+3) return names[6] 
 }
 
-console.log(goldScore(2, 3));
+console.log(golfScore(2, 3));
+
+/*
+Building a String Inverter
+The function inverts the characters of a string
+for example "hello" becomes "olleh"
+*/
+
+const reverseString = (aString) => {
+    return aString.split("").reverse().join("")
+}
+
+console.log(reverseString("Mseiya"))
